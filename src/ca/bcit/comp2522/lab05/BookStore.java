@@ -5,32 +5,37 @@ import java.util.*;
 import java.awt.print.Book;
 
 /**
- * A BookStore class contains details of books.
+ * Represents a BookStore that contains details of books.
+ * The bookstore can store and manage a collection of books.
  *
  * @author Minsung Park
- * @author Faida
+ * @author Faida Espiritu
  *
  * @version 1.0
  */
-public class BookStore {
+public class BookStore
+{
 
     private final String bookstoreName;
     private final List<Novel> novelReferences;
 
     /**
-     * Set value for instance variables.
+     * Constructs a BookStore with the given name and
+     * initializes the list of novels.
      *
-     * @param bookstoreName name of the bookstore.
+     * @param bookstoreName the name of the bookstore
      */
-    BookStore(final String bookstoreName)
+    public BookStore(final String bookstoreName)
     {
         this.bookstoreName = bookstoreName;
+
         novelReferences = new ArrayList<>();
+
         populateNovels();
     }
 
-    /*
-     * Add list of books in arrayList.
+    /**
+     * Adds all predefined novels to the ArrayList.
      */
     private void populateNovels()
     {
@@ -55,9 +60,91 @@ public class BookStore {
                         {"The Bridge of San Luis Rey", "Thornton Wilder", 1927},
                         {"Call It Sleep", "Henry Roth", 1935},
                         {"Catch-22", "Joseph Heller", 1961},
-                        {"The Catcher in the Rye", "J.D. Salinger", 1951}
+                        {"The Catcher in the Rye", "J.D. Salinger", 1951},
+                        {"A Clockwork Orange", "Anthony Burgess", 1963},
+                        {"The Confessions of Nat Turner", "William Styron", 1967},
+                        {"The Corrections", "Jonathan Franzen", 2001},
+                        {"The Crying of Lot 49", "Thomas Pynchon", 1966},
 
-                        // You can paste the rest here the same way
+                        {"A Dance to the Music of Time", "Anthony Powell", 1951},
+                        {"The Day of the Locust", "Nathanael West", 1939},
+                        {"Death Comes for the Archbishop", "Willa Cather", 1927},
+                        {"A Death in the Family", "James Agee", 1958},
+                        {"The Death of the Heart", "Elizabeth Bowen", 1958},
+                        {"Deliverance", "James Dickey", 1970},
+                        {"Dog Soldiers", "Robert Stone", 1974},
+                        {"Falconer", "John Cheever", 1977},
+                        {"The French Lieutenant's Woman", "John Fowles", 1969},
+                        {"The Golden Notebook", "Doris Lessing", 1962},
+                        {"Go Tell It on the Mountain", "James Baldwin", 1953},
+                        {"Gone with the Wind", "Margaret Mitchell", 1936},
+                        {"The Grapes of Wrath", "John Steinbeck", 1939},
+                        {"Gravity's Rainbow", "Thomas Pynchon", 1973},
+                        {"The Great Gatsby", "F. Scott Fitzgerald", 1925},
+                        {"A Handful of Dust", "Evelyn Waugh", 1934},
+                        {"The Heart Is a Lonely Hunter", "Carson McCullers", 1940},
+                        {"The Heart of the Matter", "Graham Greene", 1948},
+                        {"Herzog", "Saul Bellow", 1964},
+                        {"Housekeeping", "Marilynne Robinson", 1981},
+                        {"A House for Mr. Biswas", "V.S. Naipaul", 1962},
+                        {"I, Claudius", "Robert Graves", 1934},
+                        {"Infinite Jest", "David Foster Wallace", 1996},
+                        {"Invisible Man", "Ralph Ellison", 1952},
+                        {"Light in August", "William Faulkner", 1932},
+                        {"The Lion, The Witch and the Wardrobe", "C.S. Lewis", 1950},
+                        {"Lolita", "Vladimir Nabokov", 1955},
+                        {"Lord of the Flies", "William Golding", 1954},
+                        {"The Lord of the Rings", "J.R.R. Tolkien", 1954},
+                        {"Loving", "Henry Green", 1945},
+
+                        {"Lucky Jim", "Kingsley Amis", 1954},
+                        {"The Man Who Loved Children", "Christina Stead", 1940},
+                        {"Midnight's Children", "Salman Rushdie", 1981},
+                        {"Money", "Martin Amis", 1984},
+                        {"The Moviegoer", "Walker Percy", 1961},
+                        {"Mrs. Dalloway", "Virginia Woolf", 1925},
+                        {"Naked Lunch", "William Burroughs", 1959},
+                        {"Native Son", "Richard Wright", 1940},
+                        {"Neuromancer", "William Gibson", 1984},
+                        {"Never Let Me Go", "Kazuo Ishiguro", 2005},
+                        {"1984", "George Orwell", 1948},
+                        {"On the Road", "Jack Kerouac", 1957},
+                        {"One Flew Over the Cuckoo's Nest", "Ken Kesey", 1962},
+                        {"The Painted Bird", "Jerzy Kosinski", 1965},
+                        {"Pale Fire", "Vladimir Nabokov", 1962},
+                        {"A Passage to India", "E.M. Forster", 1924},
+                        {"Play It as It Lays", "Joan Didion", 1970},
+                        {"Portnoy's Complaint", "Philip Roth", 1969},
+                        {"Possession", "A.S. Byatt", 1990},
+                        {"The Power and the Glory", "Graham Greene", 1939},
+                        {"The Prime of Miss Jean Brodie", "Muriel Spark", 1961},
+                        {"Rabbit, Run", "John Updike", 1960},
+                        {"Ragtime", "E.L. Doctorow", 1975},
+                        {"The Recognitions", "William Gaddis", 1955},
+                        {"Red Harvest", "Dashiell Hammett", 1929},
+                        {"Revolutionary Road", "Richard Yates", 1961},
+                        {"The Sheltering Sky", "Paul Bowles", 1949},
+                        {"Slaughterhouse-Five", "Kurt Vonnegut", 1969},
+                        {"Snow Crash", "Neal Stephenson", 1992},
+                        {"The Sot-Weed Factor", "John Barth", 1960},
+                        {"The Sound and the Fury", "William Faulkner", 1929},
+
+                        {"The Sportswriter", "Richard Ford", 1986},
+                        {"The Spy Who Came in from the Cold", "John le Carré", 1964},
+                        {"The Sun Also Rises", "Ernest Hemingway", 1926},
+                        {"Their Eyes Were Watching God", "Zora Neale Hurston", 1937},
+                        {"Things Fall Apart", "Chinua Achebe", 1959},
+                        {"To Kill a Mockingbird", "Harper Lee", 1960},
+                        {"To the Lighthouse", "Virginia Woolf", 1929},
+                        {"Tropic of Cancer", "Henry Miller", 1934},
+                        {"Ubik", "Philip K. Dick", 1969},
+                        {"Under the Net", "Iris Murdoch", 1954},
+                        {"Under the Volcano", "Malcolm Lowry", 1947},
+                        {"Watchmen", "Alan Moore and Dave Gibbons", 1986},
+                        {"White Noise", "Don DeLillo", 1985},
+                        {"White Teeth", "Zadie Smith", 2000},
+                        {"Wide Sargasso Sea", "Jean Rhys", 1966}
+
                 };
 
         for(final Object[] row : data)
@@ -73,18 +160,19 @@ public class BookStore {
     }
 
     /**
-     * Prints all titles in UpperCase.
+     * Prints all titles in uppercase.
      */
-    void printAllTitles(){
+    public void printAllTitles()
+    {
         System.out.println("");
     }
 
     /**
      * Prints all titles that contain the specified parameter.
      *
-     * @param title the specific title.
+     * @param title the specific title
      */
-    void printBookTitle(final String title)
+    public void printBookTitle(final String title)
     {
         System.out.println("");
     }
@@ -92,38 +180,40 @@ public class BookStore {
     /**
      * Prints all titles in alphabetical order, A-Z.
      */
-    void printTitlesInAlphaOrder()
+    public void printTitlesInAlphaOrder()
     {
 
     }
 
     /**
      * Prints all books for the inputted decade IE 2000s.
-     * Print all books titles from 2000 - 2009.
+     * Print all books titles from 2000 to 2009.
      *
-     * @param decade the specified time period.
+     * @param decade the specified time period
      */
-    void printGroupByDecade(final int decade)
+    public void printGroupByDecade(final int decade)
     {
 
     }
 
     /**
-     * Find the longest title in the bookstore.
+     * Finds the longest title in the bookstore.
+     *
+     * @return longest book title
      */
-    void getLongest()
+    public String getLongest()
     {
-
+        return
     }
 
     /**
-     * Return true or false.
+     * Checks if a book was written in the given year.
      *
-     * @param year the year book was written.
+     * @param year the year book was written
      * @return true if the book was written in that year,
-     *         false if the book was not written in that year.
+     *         false if the book was not written in that year
      */
-    boolean isThereABookWrittenIn(final int year)
+    public boolean isThereABookWrittenIn(final int year)
     {
         return
     }
@@ -132,10 +222,10 @@ public class BookStore {
      * Returns the amount of books that contain
      * this word in their title.
      *
-     * @param word the specific word to count.
-     * @return
+     * @param word the specific word to count
+     * @return the number of matching titles
      */
-    int howManyBooksContain(final String word)
+    public int howManyBooksContain(final String word)
     {
         return
     }
@@ -144,22 +234,22 @@ public class BookStore {
      * Percentage of the books were written
      * between specified two years(inclusive).
      *
-     * @param first the starting year.
-     * @param last the ending year.
-     * @return
+     * @param first the starting year
+     * @param last the ending year
+     * @return the percentage of books between the years
      */
-    double whichPercentWrittenBetween(final int first,
-                                      final int last )
+    public int whichPercentWrittenBetween(final int first,
+                                          final int last )
     {
         return
     }
 
     /**
-     * Returns the oldest book.
+     * Returns the oldest published book.
      *
-     * @return
+     * @return the oldest book
      */
-    String getOldestBook()
+    public Novel getOldestBook()
     {
         return
     }
@@ -168,22 +258,22 @@ public class BookStore {
      * Returns a List of all books whose title
      * is this length.
      *
-     * @titleLength, the specified length of the title.
-     * @return
+     * @param titleLength the required title length
+     * @return a list of matching novels
      */
-    String getBooksThisLength(final int titleLength)
+    public List<Novel> getBooksThisLength(final int titleLength)
     {
         return
     }
 
 
     /**
-     * main method to call all of the BookStore methods
+     * The main method to call all of the BookStore methods
      * listed above.
      *
-     * @param args unused.
+     * @param args unused
      */
-    public static void main(final String args[])
+    public static void main(final String[] args)
     {
         // Contains bookstore object.
         final BookStore bookstore = new BookStore("Classic Novels");
